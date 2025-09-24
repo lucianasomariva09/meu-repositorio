@@ -1,83 +1,73 @@
-const caixaPrincipal = document.querySelector(".caixa-principal");
-const caixaPerguntas = document.querySelector(".caixa-perguntas");
-const caixaAlternativas = document.querySelector(".caixa-alternativas");
-const caixaResultado= document.querySelector(".caixa-resultado");
-const textoResultado = document.querySelector(".texto-resultado");
+const caixaPrincipal   = document.querySelector(".caixa-principal");
+const caixaPerguntas   = document.querySelector(".caixa-perguntas");
+const caixaAlternativas= document.querySelector(".caixa-alternativas");
+const caixaResultado   = document.querySelector(".caixa-resultado");
+const textoResultado   = document.querySelector(".texto-resultado");
 
 const perguntas = [
 {
-    enunciado: "Qual categoria de automobilismo você prefere?",
+    enunciado: "É início da temporada 2025 de Fórmula 1. As novas regras de motores híbridos prometem corridas mais equilibradas. Qual é sua expectativa?",
     alternativas: [
         {
-
-     
-        texto:"corridas de Monoposto (Fórmula 1, F2, F3)",
-        afirmacao: "A primeira corrida oficial da Fórmula 1 aconteceu no dia 13 de maio de 1950, no circuito de Silverstone, na Inglaterra. O vencedor foi o italiano Nino Farina, que pilotava um Alfa Romeo, considerado um dos maiores fabricantes de carros da Europa, ao lado de nomes como Ferrari, Maserati e Mercedes."
-    },
-    {
-        texto:"Turismo (Stock Car, DTM)",
-        afirmacao: "Essa afirmativa esta incorreta, pois a primeira corrida de Formula 1 aconteceu no dia 13 de maio de 1950"
-    }
-
-
+        texto:"Adoro a ideia, vai deixar as equipes mais próximas em desempenho.",
+        afirmacao:"Ficou empolgado com a possibilidade de ver disputas mais apertadas em cada Grande Prêmio."
+        },
+        {
+        texto:"Prefiro a era dos motores barulhentos e potentes de antes.",
+        afirmacao:"Sentiu saudade dos tempos de V10 e acredita que o som faz parte da emoção da F1."
+        }
     ]
 },
 {
-    enunciado: "Quem foi o campeão da Fórmula 1 em 1950?",
+    enunciado: "Durante o GP de Mônaco, uma equipe usa um software de inteligência artificial para prever quando o safety car pode entrar. Como você reage?",
     alternativas: [
-    {
-        texto:"Ayrton Senna",
-        afirmacao: "Errado. Ayrton Senna começou a correr pela Formula 1 em 1984"
-    },
-    {
-        texto:"Nino Farina da Alfa Romeo",
-
-        afirmacao: "O italiano Nino Farina da Alfa Romeo, foi campeão da temporada de 1950. A temporada de Fórmula 1 de 1950 foi a primeira temporada do Campeonato do Mundo de Fórmula 1 da FIA. Começou em 13 de maio de 1950 e terminou em 3 de setembro, após sete corridas."
-    }
+        {
+        texto:"Isso é genial, estratégia é tudo na F1 moderna.",
+        afirmacao:"Passou a estudar como IA e análise de dados definem pit stops e estratégias de corrida."
+        },
+        {
+        texto:"Prefiro que o feeling dos engenheiros e do piloto decida.",
+        afirmacao:"Valoriza a intuição e a experiência humanas para decisões cruciais no pit wall."
+        }
     ]
 },
 {
-    enunciado:  "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
-
+    enunciado: "Seu piloto favorito é convidado para testar um novo simulador com realidade aumentada que treina reflexos em tempo real. Qual é sua opinião?",
     alternativas: [
         {
-        texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-        afirmacao: "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
-    },
-    {
-        texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendo a importância de proteger os trabalhadores.",
-        afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
-    }
+        texto:"Ferramentas assim podem melhorar ainda mais o desempenho na pista.",
+        afirmacao:"Tornou-se fã das inovações de treinamento que unem tecnologia e habilidade."
+        },
+        {
+        texto:"Nenhum simulador substitui a adrenalina da corrida real.",
+        afirmacao:"Defende que a prática em pista continua sendo o maior diferencial de um campeão."
+        }
     ]
 },
 {
-    enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
-
+    enunciado: "Você precisa criar uma arte que represente a Fórmula 1 de 2025 para um trabalho da escola. O que faz?",
     alternativas: [
         {
-       texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-       afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
-    },
-    {
-        texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
-        afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
-    }
+        texto:"Desenho o carro com as novas asas e detalhes de aerodinâmica em um programa de design.",
+        afirmacao:"Desenvolveu um olhar artístico para o design arrojado dos carros da era híbrida."
+        },
+        {
+        texto:"Uso um gerador de imagem por IA para criar uma cena de pit stop futurista.",
+        afirmacao:"Aprendeu a combinar criatividade com tecnologia para mostrar o dinamismo da F1 moderna."
+        }
     ]
 },
 {
-    enunciado:  "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
-
+    enunciado: "No projeto final de história do esporte, um colega copia trechos inteiros de entrevistas de pilotos atuais. Qual é sua atitude?",
     alternativas: [
         {
-        texto:"Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-        afirmacao: "Infelizmente passou a utilizar a IA para fazer todas suas tarefas e agora se sente dependente da IA para tudo."
-    },
-    {
-        texto:"O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-        afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
-    }
-
-
+        texto:"Deixo como está, afinal todo mundo usa internet para isso.",
+        afirmacao:"Depois percebeu que copiar reduz a chance de mostrar opiniões próprias sobre a temporada."
+        },
+        {
+        texto:"Reescrevo e acrescento minhas análises sobre as corridas e pilotos de 2025.",
+        afirmacao:"Mostrou que um bom trabalho exige pesquisa, mas também visão crítica sobre o campeonato."
+        }
     ]
 }
 ];
@@ -88,37 +78,34 @@ let historiaFinal = "";
 
 function mostraPergunta(){
     if (atual >= perguntas.length){
-mostraResultado();
-return;
+        mostraResultado();
+        return;
     }
-
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.textContent = "";
     mostraAlternativas();
-
 }
 
 function mostraAlternativas(){
     for(const alternativa of perguntaAtual.alternativas){
-    const botaoAlternativas = document.createElement("button");
-    botaoAlternativas.textContent = alternativa.texto;
-    botaoAlternativas.addEventListener("click",() => respostaSelecionada(alternativa));
-    caixaAlternativas.appendChild(botaoAlternativas);
-   }
+        const botao = document.createElement("button");
+        botao.textContent = alternativa.texto;
+        botao.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botao);
+    }
 }
-function respostaSelecionada(opcaoSelecionada){
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes +" ";
+
+function respostaSelecionada(opcao){
+    historiaFinal += opcao.afirmacao + " ";
     atual++;
     mostraPergunta();
 }
 
 function mostraResultado(){
-    caixaPerguntas.textContent = "em 2049...";
-    textoResultado.textContent = historiaFinal;
+    caixaPerguntas.textContent = "No final da temporada 2025...";
+    textoResultado.textContent = historiaFinal.trim();
     caixaAlternativas.textContent = "";
 }
-
 
 mostraPergunta();
